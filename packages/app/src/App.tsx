@@ -1,10 +1,9 @@
-import { Box, NativeBaseProvider } from "native-base";
+// import { Box, NativeBaseProvider } from "native-base";
 import React from "react";
 import {
   Image,
   ImageSourcePropType,
   Platform,
-  SafeAreaView,
   StyleSheet,
   Text,
   View,
@@ -18,16 +17,16 @@ export function App(): JSX.Element {
     ? `${Platform.OS} (${subplatform})`
     : Platform.OS;
   return (
-    <NativeBaseProvider>
+    <>
       {/* On React Native for Web builds coming from CRA, TypeScript
           complains about the image type, so we cast it as a workaround  */}
-      <Box>Hello world</Box>
+      {/* <Box>Hello world</Box>
       <Box>Hello world</Box>
       <Box>Hello world</Box>
       <Box>Hello world</Box>
       <Box>Hello world</Box>
       <Box backgroundColor="red.400">Hello world</Box>
-      <Box>Hello world</Box>
+      <Box>Hello world</Box> */}
 
       <Image style={styles.logo} source={LogoSrc as ImageSourcePropType} />
       <Text style={styles.text}>Hello from React Native!</Text>
@@ -38,7 +37,7 @@ export function App(): JSX.Element {
         </View>
       </View>
       <AsyncStorageExample />
-    </NativeBaseProvider>
+    </>
   );
 }
 
