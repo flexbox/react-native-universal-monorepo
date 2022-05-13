@@ -1,5 +1,5 @@
 // import { Box, NativeBaseProvider } from "native-base";
-import { Box, Button } from "native-base";
+import { Box, Button, NativeBaseProvider } from "native-base";
 import React from "react";
 import {
   Image,
@@ -18,9 +18,7 @@ export function App(): JSX.Element {
     ? `${Platform.OS} (${subplatform})`
     : Platform.OS;
   return (
-    <>
-      {/* <Box backgroundColor="red.400">Hello world</Box> */}
-
+    <NativeBaseProvider>
       {/* On React Native for Web builds coming from CRA, TypeScript
           complains about the image type, so we cast it as a workaround  */}
       {/* <Image style={styles.logo} source={LogoSrc as ImageSourcePropType} /> */}
@@ -31,8 +29,9 @@ export function App(): JSX.Element {
           <Text style={styles.platformValue}>{platformValue}</Text>
         </View>
       </View>
+      <Button>Hello Native Base</Button>
       <AsyncStorageExample />
-    </>
+    </NativeBaseProvider>
   );
 }
 
