@@ -1,4 +1,5 @@
 // import { Box, NativeBaseProvider } from "native-base";
+import { Box, Button } from "native-base";
 import React from "react";
 import {
   Image,
@@ -10,7 +11,7 @@ import {
 } from "react-native";
 import { AsyncStorageExample } from "./AsyncStorageExample";
 import { subplatform } from "./config";
-import LogoSrc from "./logo.png";
+// import LogoSrc from "./logo.png";
 
 export function App(): JSX.Element {
   const platformValue = subplatform
@@ -18,17 +19,11 @@ export function App(): JSX.Element {
     : Platform.OS;
   return (
     <>
+      {/* <Box backgroundColor="red.400">Hello world</Box> */}
+
       {/* On React Native for Web builds coming from CRA, TypeScript
           complains about the image type, so we cast it as a workaround  */}
-      {/* <Box>Hello world</Box>
-      <Box>Hello world</Box>
-      <Box>Hello world</Box>
-      <Box>Hello world</Box>
-      <Box>Hello world</Box>
-      <Box backgroundColor="red.400">Hello world</Box>
-      <Box>Hello world</Box> */}
-
-      <Image style={styles.logo} source={LogoSrc as ImageSourcePropType} />
+      {/* <Image style={styles.logo} source={LogoSrc as ImageSourcePropType} /> */}
       <Text style={styles.text}>Hello from React Native!</Text>
       <View style={styles.platformRow}>
         <Text style={styles.text}>Platform: </Text>

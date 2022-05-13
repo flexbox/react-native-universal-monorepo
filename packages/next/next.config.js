@@ -1,5 +1,29 @@
-/** @type {import('next').NextConfig} */
 const path = require("path");
+
+const withPlugins = require("next-compose-plugins");
+const withTM = require("next-transpile-modules")([
+  "native-base",
+  "react-native-svg",
+  "react-native-safe-area-context",
+  "@react-aria/visually-hidden",
+  "@react-native-aria/button",
+  "@react-native-aria/checkbox",
+  "@react-native-aria/combobox",
+  "@react-native-aria/focus",
+  "@react-native-aria/interactions",
+  "@react-native-aria/listbox",
+  "@react-native-aria/overlays",
+  "@react-native-aria/radio",
+  "@react-native-aria/slider",
+  "@react-native-aria/tabs",
+  "@react-native-aria/utils",
+  "@react-stately/combobox",
+  "@react-stately/radio",
+]);
+
+// Necessary to handle static files
+// const withImages = require("next-images");
+const withFonts = require("next-fonts");
 
 const nextConfig = {
   // Allows us to access other directories in the monorepo
@@ -43,27 +67,11 @@ const nextConfig = {
   },
 };
 
-// Necessary to handle statically
-const withImages = require("next-images");
-const withFonts = require("next-fonts");
-
-const { withExpo } = require("@expo/next-adapter");
-const withPlugins = require("next-compose-plugins");
-const withTM = require("next-transpile-modules")([
-  "react-native-web",
-  "react-native-svg",
-  "native-base",
-  "react-native-svg",
-]);
-
-// module.exports = withImages(withFonts(nextConfig));
-
 module.exports = withPlugins(
   [
     withTM,
     [withFonts, { projectRoot: __dirname }],
-    [withImages, { projectRoot: __dirname }],
-    [withExpo, { projectRoot: __dirname }],
+    // [withImages, { projectRoot: __dirname }],
     // your plugins go here.
   ],
   nextConfig
