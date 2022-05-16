@@ -29,7 +29,7 @@ export function App(): JSX.Element {
           <Text style={styles.platformValue}>{platformValue}</Text>
         </View>
       </View>
-      <Button>Hello Native Base</Button>
+      {/* <Button>Hello Native Base</Button> */}
       <AsyncStorageExample />
     </NativeBaseProvider>
   );

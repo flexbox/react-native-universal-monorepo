@@ -17,7 +17,7 @@
       "**/react-native-macos",
       "**/react-native-windows",
       "**/native-base",
-      "**/native-base/**",
+      "**/@native-base/icons",
       "**/react-native-svg",
       "**/react-native-svg/**"
     ]

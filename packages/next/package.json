@@ -10,9 +10,10 @@
   },
   "dependencies": {
     "@my-app/app": "*",
+    "@native-base/icons": "^0.0.11",
     "@react-native-async-storage/async-storage": "^1.15.8",
     "native-base": "^3.4.3",
-    "next": "12.1.5",
+    "next": "12.0.4",
     "next-fonts": "^1.5.1",
     "next-images": "^1.8.1",
     "react": "17.0.2",
@@ -24,10 +25,10 @@
     "setimmediate": "^1.0.5"
   },
   "devDependencies": {
-    "@expo/next-adapter": "^4.0.4",
+    "@native-base/next-adapter": "^1.1.9",
     "@types/react": "17.0.24",
     "@types/react-native": "^0.65.2",
-    "babel-plugin-react-native-web": "^0.17.1",
+    "babel-plugin-react-native-web": "^0.17.7",
     "babel-plugin-transform-define": "^2.0.1",
     "next-compose-plugins": "^2.2.1",
     "next-fonts": "^1.5.1",
