@@ -1,26 +1,27 @@
+// import { Box, NativeBaseProvider } from "native-base";
+import { Box, Button, NativeBaseProvider } from "native-base";
 import React from "react";
 import {
   Image,
   ImageSourcePropType,
   Platform,
-  SafeAreaView,
   StyleSheet,
   Text,
   View,
 } from "react-native";
 import { AsyncStorageExample } from "./AsyncStorageExample";
 import { subplatform } from "./config";
-import LogoSrc from "./logo.png";
+// import LogoSrc from "./logo.png";
 
 export function App(): JSX.Element {
   const platformValue = subplatform
     ? `${Platform.OS} (${subplatform})`
     : Platform.OS;
   return (
-    <SafeAreaView style={styles.root}>
-      {/* On React Native for Web builds coming from CRA, TypeScript 
+    <NativeBaseProvider>
+      {/* On React Native for Web builds coming from CRA, TypeScript
           complains about the image type, so we cast it as a workaround  */}
-      <Image style={styles.logo} source={LogoSrc as ImageSourcePropType} />
+      {/* <Image style={styles.logo} source={LogoSrc as ImageSourcePropType} /> */}
       <Text style={styles.text}>Hello from React Native!</Text>
       <View style={styles.platformRow}>
         <Text style={styles.text}>Platform: </Text>
@@ -28,8 +29,9 @@ export function App(): JSX.Element {
           <Text style={styles.platformValue}>{platformValue}</Text>
         </View>
       </View>
-      <AsyncStorageExample/>
-    </SafeAreaView>
+      {/* <Button>Hello Native Base</Button> */}
+      <AsyncStorageExample />
+    </NativeBaseProvider>
   );
 }
 
@@ -65,5 +67,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 6,
     borderRadius: 6,
     alignItems: "center",
-  }
+  },
 });
