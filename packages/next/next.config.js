@@ -3,13 +3,17 @@ const path = require("path");
 
 const nextConfig = {
   // Allows us to access other directories in the monorepo
-  experimental: {
-    externalDir: true,
-  },
+  // experimental: {
+  //   externalDir: true,
+  // },
   // This feature conflicts with next-images
   // images: {
   //   disableStaticImages: true,
   // },
+  // Config from Solito
+  // projectRoot: __dirname,
+  // reactStrictMode: true,
+  // webpack5: true,
   webpack: (config, options) => {
     // config.resolve.alias = {
     //   ...(config.resolve.alias || {}),
@@ -47,7 +51,6 @@ const nextConfig = {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
       "react-native$": "react-native-web",
-      // "react-native-linear-gradient": "react-native-web-linear-gradient",
     };
     config.resolve.extensions = [
       ".web.js",
